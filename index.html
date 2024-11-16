@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the design and analysis of an advanced anti-blast door developed for naval applications.">
+    <title>The Anti-Blast Door Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #C0C0C0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #FFFFFF;
+        }
+h2 {
+            color: #333;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Design and Analysis of the Anti-Blast Door</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p style="text-align: justified">
+                Welcome to the project on designing and analyzing an anti-blast door. The whole blast-protecting door consists of two parts. One is the Frame and the other is the Door. The frame which will be attached to the RCC wall, is made of 4 parts. The E-32 material has been considered for the frame. The overall dimension of the frame is 2092 mm × 3216 mm × 547 mm. On the other hand, the door is also comprised of four parts. The main feature of the door is the square structure honeycomb section which is basically the RCC slabs, oriented in such a way that it demonstrates the honeycomb. The door has two revolute hinges which allow the rotation of the door along a particular axis with respect to the frame. The door has been designed to withstand 
+sufficient tensile load and nine door lock rods connected to the locking mechanism have been 
+considered to be used to support the shear load. The door locking mechanism can be controlled 
+by the door wheel. 
+            </p>
+            <img src="Screenshot 2024-11-16 144950.jpg" alt="Introduction Image">
+<center><b>Door and Frame Assembly</b></center>
+        </section>
+        <section id="design">
+            <h2>Priliminary Assessment that has been considered for the design</h2>
+            <p style="text-align: justified">
+                 An explosion charge is located about 15 meters from the new construction, with the possibility 
+of detonation of 150 kg TNT equivalent. </br>
+In favor of safety in the calculations, an increase of 20% of the weight of the charge is taken 
+into account. Therefore, we have: W=150 × 1.2=180 kg TNT equivalent </br> 
+Using CONWEP software or UFC 3-340-02 graphs, the following explosion parameters are 
+obtained on the exposed face: </br>
+<center>P<sub>max</sub> = 4.6 bar;<br></center>   
+<center>T<sub>d</sub> = 14 ms;<br></center>  
+<center>Peak Impulse = 14.61 bar-ms;<br></center> 
+<center>Impulse, I = 16x2 = 32 bar-ms (for safety)</center>           
+</p>
+       <!--     <img src="image2.jpg" alt="Design Details Image"> -->
+        </section>
+        <section id="study">
+            <h2>Computation Study (Finite Element Analysis)</h2>
+            <p style="text-align: justified">
+                The structural behavior of the door and frame has been predicted via simulation software 
+Ansys workbench 2021R2. The maximum stress, maximum shear stress, and FOS (Factor of 
+Safety) has been evaluated during the numerical simulation. <br>
+<b>Assumption</b><br>
+1. The inertia effect and the damping effect have been ignored<br>
+2. The large deflection has been considered<br>
+3. The material nonlinearity has not been considered<br>
+4. The nonlinear relationship of pressure with respect to time has been reconfigured in linear 
+form <br>
+5. Some body parts have been suppressed for physics which seems unnecessary or does not 
+have significance. This results in lowering the computation duty which causes a decrease in the 
+computational run-time <br>
+6. The simulation has been observed during the fully locked situation of the door
+            </p>
+           <!--  <img src="image3.jpg" alt="Analysis Results Image"> -->
+</section>
+        <section id="boundary">
+            <h2>Boundary Conditions</h2>
+            <p style="text-align: justified">
+1. The frame parts that will be covered by the RCC slab wall have been considered as fixed 
+support <br>
+2. The revolute joint has been applied to the door hinge <br>
+3. The door locking rod has been fixed at both ends <br>
+4. The pressure profile with respect to time is given below <br>
+5. Some body parts have been suppressed for physics which seems unnecessary or does not 
+have significance. This results in lowering the computation duty which causes a decrease in the 
+computational run-time <br>
+6. The simulation has been observed during the fully locked situation of the door
+            </p>
+            <img src="Screenshot 2024-11-16 155329.jpg" alt="boundary Image">
+<center><b>Pressure vs Time</b></center>
+
+</section>
+        <section id="result">
+            <h2>Results and Discussion</h2>
+            <p style="text-align: justified">
+<li>The maximum equivalent instantaneous stress was observed at almost 297.87 MPa due 
+to the 32 bar-ms peak impulse when exerted directly on the door which is below the 
+minimum yield strength of the door material E-32 (Yield Strength = 315 MPa). The 
+maximum stress was generated near the hole which possesses the door wheel. The 
+maximum equivalent stress during pressure rebound was found 94.32 MPa which 
+is sufficiently well below the minimum yield strength of the material</li> 
+            </p>
+            <img style="width: 60%;"src="Screenshot 2024-11-16 160315.jpg" alt="result Image">
+ <center><b>Maximum Equivalent stress during peak impulse</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 160422.jpg" alt="result Image2">
+<center><b>Maximum Equivalent stress during peak impulse (3D-view)</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 160502.jpg" alt="result Image3">
+<center><b>Equivalent stresses at different times</b></center>
+<li>The maximum shear stress was found at 160.25 MPa due to the peak impulse which was 
+below the yield strength of shear (S<sub>Sy</sub> = 0.577S<sub>y</sub> = 182 MPa). In this case, also the 
+maximum shear stress was generated at the circular hole that possesses the door 
+wheel</li> 
+        <img style="width: 60%;"src="Screenshot 2024-11-16 163928.jpg" alt="result Image">
+ <center><b>Maximum shear stress during the peak impulse</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 163953.jpg" alt="result Image2">
+<center><b>Maximum shear stress during the peak impulse (Side-view)</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 164015.jpg" alt="result Image3">
+<center><b>Maximum Shear stress at different times</b></center></section>
+<li>The maximum deformation of the door has been observed due to the peak impulse 
+of 1.565 mm during the forward impulse and 0.5 mm during the pressure rebound</li>
+<img style="width: 60%;"src="Screenshot 2024-11-16 165304.jpg" alt="result Image">
+ <center><b>Total deformation at peak impulse</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 165337.jpg" alt="result Image2">
+<center><b>Total deformation at the rebound pressure</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 165419.jpg" alt="result Image3">
+<center><b>Total Deformation at different times</b></center></section>
+<li>The door lock bar experiences the maximum equivalent stress of 45.187 MPa which 
+resulted in a 7 times factor of safety (yield strength (S<sub>y</sub> = 315 MPa) ÷ the equivalent 
+stress). That means the bar can take 7 times more stress without any yielding. The 
+maximum shear stress on the lock bar during the peak impulse was 25.058 MPa which 
+resulted in a 7.25 times safety factor (shear yield strength (S<sub>Sy</sub> = 182 MPa) ÷ the 
+equivalent stress). So, the possibility of shear failure of the lock bar is much lower</li>
+<img style="width: 60%;"src="Screenshot 2024-11-16 171506.jpg" alt="result Image">
+ <center><b> Equivalent stress at door lock bar at Peak Impulse</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 171543.jpg" alt="result Image2">
+<center><b>Equivalent stress at the door lock rod/bar at different times</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 171603.jpg" alt="result Image">
+ <center><b>Maximum shear stress at door lock bar at peak impulse </b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 171628.jpg" alt="result Image2">
+<center><b>Maximum shear stress at different times</b></center>
+Since the maximum stresses in the worst-case scenario didn’t exceed the yielding limit of the 
+material in any case. So, the possibility of sustaining the door in case of direct exposure at the 
+originating point of the explosion with a 32 bar-ms peak impulse is sufficiently high.
+<li>The average factor of safety of the door at the peak impulse was 6.45 and the maximum safety 
+factor was found 15 times. Moreover, in any circumstance, the factor of safety is always at least 
+greater than 1.1. However, the maximum stress of 297.87 MPa is so large for the concrete parts. 
+That’s why the Reinforced Concrete Cement slabs have been used in the honeycomb 
+considering the counteract with damage of the concrete parts</li>
+<img style="width: 45%;"src="Screenshot 2024-11-16 172847.jpg" alt="result Image2">
+<center><b>Factor of Safety at peak impulse and direct exposure at the originating <br>point of the 
+explosion</b></center>
+<img style="width: 35%;"src="Screenshot 2024-11-16 172911.jpg" alt="result Image">
+ <center><b>Safety of factors at different times</b></center>
+</section>
+<section id="supplymentary images">
+            <h2>Supplymentary Images</h2>
+            <p style="text-align: justified">
+            </p>
+<img style="width: 60%;"src="Screenshot 2024-11-16 173545.jpg" alt="result Image2">
+<center><b>The Frame</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 173409.jpg" alt="result Image2">
+<center><b>The different view of the Frame part</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 173613.jpg" alt="result Image2">
+<center><b>The Door</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 173409.jpg" alt="result Image2">
+<center><b>The different view of the door part</b></center>
+<img style="width: 100%;"src="Screenshot 2024-11-16 173430.jpg" alt="result Image2">
+<center><b>Honeycomb structure and rebars inside the concrete slabs</b></center>
+<img style="width: 60%;"src="Screenshot 2024-11-16 181931.jpg" alt="result Image2">
+<center><b>Honeycomb structure in the Door part</b></center>
+</section>
+<section id="Material properties">
+            <h2>Material Properties</h2>
+            <p style="text-align: justified">
+            </p>
+<img style="width: 100%;"src="Screenshot 2024-11-16 173500.jpg" alt="result Image2">
+</section>
+<section id="Standards">
+            <h2>Standards</h2>
+            <p style="text-align: justified">
+            </p>
+<li><font color="red"><b>Department Of Defense Explosive Safety Board (DDESB)</b></font> technical paper has been 
+followed</li>
+<li><font color="red"><b>DDESB Technical Paper 15:</b></font> (2010) Approved Protective Construction</li><br>
+
+<li><font color="red"><b>National Fire Protection Association (NFPA)</b></font> codes have been followed in design 
+for safety issues</li>
+<li><font color="red"><b>NFPA 101:</b></font> Life Safety Code</li><br>
+<li><font color="red"><b>UFC 3-340-02:</b></font> (2008; with Change 2, 2014) Structures to Resist the Effects of 
+Accidental Explosions 
+
+    </main>
+    <footer>
+        <p>Copyright &copy; September, 2024 Anti-Blast Door Project | Designed by - Rifat Shahrear, Mechanical Engineering, CUET, Bangladesh<br>
+contact - rifatshahriar83@gmail.com</p>
+    </footer>
+</body>
+</html>
